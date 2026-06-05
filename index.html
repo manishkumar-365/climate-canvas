@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="weatherCard" id="dynamicCard">
+
+        <div class="searchSection">
+            <input type="text" class="inputCityname" id="input" placeholder="Enter City">
+
+            <button type="submit" class="searchBtn" id="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button class="locationBtn" id="locationButton">
+                <i class="fa-solid fa-location-crosshairs"></i>
+            </button>
+
+        </div>
+
+        <div class="showSpinner" id="loadingSpinner"></div>
+
+        <div class="locationSection">
+            <p class="displayError" id="errorMessage"></p>
+            <span class="locationIcon">
+                <i class="fa-solid fa-location-dot"></i>
+                <h2 class="locationName" id="cityName"></h2>
+            </span>
+            <span class="currentTime" id="dayName"></span>
+        </div>
+
+        <div class="weatherSection">
+
+            <div class="temperatureBox">
+
+                <div class="temperatureSection">
+                    <h1 class="temp" id="temperature"></h1>
+                    <p class="desc" id="description"></p>
+                </div>
+
+                <div class="tempRangeSection">
+                    <span class="tempRange" id="temperatureRange"></span>
+                    <span class="feelstemperature" id="feelsLike"></span>
+                </div>
+
+            </div>
+
+            <div class="showAnimation" id="weatherAnimation"></div>
+
+        </div>
+
+        <div class="detailSection" id="infoSection">
+
+            <p>Humidity</p>
+            <p>Wind Speed</p>
+            <span id="humidity"></span>
+            <span id="windSpeed"></span>
+            <p>Pressure</p>
+            <p>Visibility</p>
+            <span id="pressure"></span>
+            <span id="visibility"></span>
+        </div>
+
+        <div class="suntimeRange" id="timeRange">
+            <p>Sunrise</p>
+            <p>Sunset</p>
+            <span id="sunRise"></span>
+            <span id="sunSet"></span>
+        </div>
+
+    </div>
+
+    <!-- lottie library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

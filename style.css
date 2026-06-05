@@ -1,0 +1,343 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background: linear-gradient(to bottom, #ECE9E6, #FFFFFF);
+    background-repeat: no-repeat;
+}
+
+
+.weatherCard {
+    width: 100%;
+    max-width: 440px;
+    min-height: auto;
+
+    margin: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    background: linear-gradient(to bottom, hsl(206, 83%, 54%), hsl(189, 70%, 74%));
+    backdrop-filter: blur(20px);
+    color: white;
+
+    border-radius: 18px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.11);
+}
+
+.nightTheme {
+    background: linear-gradient(to bottom, hsla(226, 40%, 34%, 0.904), hsla(298, 67%, 36%, 0.748));
+}
+
+
+.detailSection.nightBackground {
+    background: hsla(0, 0%, 33%, 0.2);
+    backdrop-filter: blur(15px);
+}
+
+.suntimeRange.nightBackground {
+    background: hsla(0, 0%, 33%, 0.2);
+    backdrop-filter: blur(15px);
+}
+
+.searchSection {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+}
+
+.inputCityname {
+    width: 280px;
+
+    padding: 12px 18px;
+    font-size: 18px;
+
+    color: white;
+    background: hsla(0, 0%, 86%, 0.3);
+    backdrop-filter: blur(20px);
+
+    border: none;
+    border-radius: 12px;
+    box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.2);
+
+}
+
+.inputCityname:hover {
+    transform: scale(1.02);
+    transition: 0.2s ease;
+}
+
+.inputCityname::placeholder {
+    font-weight: normal;
+    color: rgba(245, 245, 245, 0.5);
+}
+
+.inputCityname:focus {
+    outline: none;
+}
+
+.locationBtn {
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: hsla(0, 0%, 90%, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.3);
+}
+
+.locationBtn:hover {
+    background-color: hsla(240, 4%, 89%, 0.4);
+    transform: scale(1.05);
+    transition: 0.2s ease;
+}
+
+.locationBtn:active {
+    background-color: hsla(240, 3%, 89%, 0.6);
+    transition: 0.3s ease;
+}
+
+
+.searchBtn {
+    padding: 10px 16px;
+
+    font-size: 16px;
+    font-weight: normal;
+
+    border: none;
+    border-radius: 12px;
+
+    color: white;
+    background: hsla(240, 3%, 89%, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.3);
+}
+
+.searchBtn:hover {
+    background-color: hsla(240, 3%, 89%, 0.4);
+    transform: scale(1.05);
+    transition: 0.2s ease;
+}
+
+.searchBtn:active {
+    background-color: hsla(240, 3%, 89%, 0.6);
+    transition: 0.3s ease;
+}
+
+.showSpinner {
+    display: block;
+    width: 75px;
+    height: 75px;
+}
+
+.hideSpinner {
+    display: none;
+}
+
+
+.locationSection {
+    width: 90%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.displayError {
+    color: hsla(0, 87%, 61%, 0.9);
+    padding: 4px 12px;
+
+    background: hsla(0, 66%, 85%, 0.533);
+    backdrop-filter: blur(15px);
+    border-radius: 8px;
+    margin: 6px 0px;
+    display: none;
+}
+
+
+.weatherSection {
+    width: 90%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+}
+
+.locationIcon {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.locationName {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.currentTime {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.temperatureBox {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+}
+
+
+.temperatureSection {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+}
+
+.temp {
+    position: relative;
+    font-size: 3.5em;
+    font-weight: 600;
+    top: 10px;
+}
+
+.desc {
+    font-size: 24px;
+    text-transform: capitalize;
+}
+
+.tempRangeSection {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+
+    font-size: 18px;
+}
+
+.showAnimation {
+    max-width: 150px;
+    height: 150px;
+}
+
+.detailSection p {
+    font-size: 16px;
+    color: hsla(0, 0%, 100%, 0.815);
+    text-align: center;
+}
+
+.detailSection {
+    width: 100%;
+    max-width: 380px;
+    min-height: 75px;
+
+    font-size: 20px;
+
+    background: hsla(206, 99%, 39%, 0.201);
+    backdrop-filter: blur(15px);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    text-align: center;
+
+    padding: 10px;
+    border-radius: 16px;
+}
+
+.suntimeRange p {
+    font-size: 18px;
+    color: hsla(0, 0%, 100%, 0.76);
+}
+
+.suntimeRange {
+    width: 100%;
+    max-width: 380px;
+    min-height: 75px;
+
+    font-size: 24px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+
+    background: hsla(206, 99%, 39%, 0.201);
+    backdrop-filter: blur(15px);
+
+    border-radius: 16px;
+    text-align: center;
+    justify-content: baseline;
+}
+
+@media screen and (max-width: 450px) {
+    .weatherCard {
+        width: 100%;
+        min-height: 100dvh;
+
+        margin: 0px;
+        padding: 12px;
+
+        border-radius: 0px;
+    }
+
+    .searchSection{
+        gap: 5px;
+    }
+
+    .inputCityname {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .searchBtn,
+    .locationBtn{
+        padding: 8px 12px;
+    }
+
+    .temperatureBox {
+        gap: 20px;
+    }
+
+    .showAnimation {
+        width: 115px;
+    }
+
+    .locationSection {
+        gap: 4px;
+        margin-left: 5px;
+    }
+
+    .locationName {
+        font-size: 18px;
+    }
+
+    .currentTime {
+        font-size: 12px;
+    }
+
+    .desc {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+}
