@@ -38,14 +38,14 @@ Building this project gave me hands-on experience with:
 
 There are still a few ideas I'd like to explore in the future, such as a multi-day forecast and hourly weather data, but this version represents a complete project that helped me become much more comfortable building real-world applications with vanilla JavaScript.
 
-### Desktop View
+### Desktop View 🌅
 
 ![Desktop](screenshots/desktop-preview.png)
 
-### Night Theme
+### Night Theme 🌇
 
 ![Night Theme](screenshots/night-theme.png)
 
-### Mobile View
+### Mobile View 📱
 
 ![Mobile](screenshots/mobile-view.png)
