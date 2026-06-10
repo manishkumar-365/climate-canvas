@@ -335,6 +335,7 @@ function loadData() {
     if (savedCity) main(savedCity);
     else {
         hideSpinner();
+        weather.locationIcon.style.visibility='hidden';
         weather.errorMessage.style.display = 'block';
         weather.errorMessage.textContent = 'No recent city found. Search for a city.';
     }
