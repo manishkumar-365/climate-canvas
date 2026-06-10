@@ -9,7 +9,7 @@ const weather = {
     loadingSpinner: document.getElementById('loadingSpinner'),
 
     errorMessage: document.getElementById('errorMessage'),
-    locationIcon: document.querySelector('.locationIcon'),
+    locationDot: document.getElementById('locationDot'),
     cityName: document.getElementById('cityName'),
     dayName: document.getElementById('dayName'),
 
@@ -57,8 +57,6 @@ function validateInput() {
 function loadSpinner() {
 
     weather.loadingSpinner.innerHTML = '';
-    weather.locationIcon.style.visibility='hidden';
-
     lottie.loadAnimation({
         container: weather.loadingSpinner,
         path: 'Animation/loadingspinner.json',
@@ -66,12 +64,19 @@ function loadSpinner() {
         loop: true,
         autoplay: true
     })
-
+    hideLocationDot();
 }
 
 function hideSpinner() {
+    showLocationDot();
     weather.loadingSpinner.classList.add('hideSpinner');
-    weather.locationIcon.style.visibility='visible';
+}
+
+function showLocationDot() {
+    weather.locationDot.style.display = "block";
+}
+function hideLocationDot() {
+    weather.locationDot.style.display = "none";
 }
 
 function getLocation() {
@@ -239,6 +244,7 @@ function renderAnimation(data) {
         Mist: "mist.json",
         'Partly Cloudy': "partlyclouds.json"
     }
+
     weather.weatherAnimation.innerHTML = '';
 
     lottie.loadAnimation({
@@ -255,7 +261,6 @@ async function mainBycoordinates(lat, lon) {
 
     try {
         loadSpinner();
-
         const apiID = 'f82ab38733999748b7b819e3a8a65494';
         const responsePromise = fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiID}&units=metric`);
         // this will cause refresh effect like loading spinner after refresh
@@ -295,7 +300,6 @@ async function mainBycoordinates(lat, lon) {
 async function main(newInput) {
 
     try {
-
         loadSpinner();
 
         const apiID = 'f82ab38733999748b7b819e3a8a65494';
@@ -331,14 +335,17 @@ async function main(newInput) {
 }
 
 function loadData() {
+    
     const savedCity = localStorage.getItem("city_name")
-    if (savedCity) main(savedCity);
+    if (savedCity) {
+        main(savedCity);
+    }
     else {
         hideSpinner();
-        weather.locationIcon.style.visibility='hidden';
+        hideLocationDot();
         weather.errorMessage.style.display = 'block';
         weather.errorMessage.textContent = 'No recent city found. Search for a city.';
     }
-    }
+}
 
-    loadData();
+loadData();
