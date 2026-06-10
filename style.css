@@ -293,7 +293,7 @@ body {
 @media screen and (max-width: 450px) {
     .weatherCard {
         width: 100%;
-        min-height: 100dvh;
+        min-height: 100vh;
 
         margin: 0px;
         padding: 12px;

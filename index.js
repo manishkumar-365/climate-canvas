@@ -140,7 +140,6 @@ function startLiveClock(localMilliseconds) {
 }
 
 function formatData(data) {
-
     const currentTimezone = getNativeTime(data);
 
     const processedData = {
